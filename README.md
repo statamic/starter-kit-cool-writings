@@ -19,7 +19,7 @@
 
 ## Screenshot
 
-<!-- insert screenshot -->
+![Screenshot](https://github.com/statamic/statamic-starter-cool-writings/raw/master/screenshot.png)
 
 ## Quick Start
 
