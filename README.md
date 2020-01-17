@@ -29,6 +29,8 @@
 git clone git@github.com:statamic/statamic-starter-cool-writings.git new-site
 cd my-site
 rm -rf .git
+composer install
+cp .env.example .env && php artisan key:generate
 ```
 
 **2. Make a new user** – you'll want it to be a `super` so you have access to everything.
