@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d7f940454df5fa79de3c17819a3cc70",
+    "content-hash": "2d2676c54507278b0bbc28764e9d1164",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3429,11 +3429,17 @@
         },
         {
             "name": "statamic/cms",
-            "version": "dev-master",
+            "version": "v3.0.0-beta.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/statamic/cms.git",
+                "reference": "82377fb7845cd77a9dcb1a3d8d8c688e14b82a63"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/jack/Sites/cms",
-                "reference": "e1cfa21254f0c0db67635c45096d49274265f934"
+                "type": "zip",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/82377fb7845cd77a9dcb1a3d8d8c688e14b82a63",
+                "reference": "82377fb7845cd77a9dcb1a3d8d8c688e14b82a63",
+                "shasum": ""
             },
             "require": {
                 "composer/composer": "^1.7",
@@ -3488,12 +3494,7 @@
                     "src/helpers.php"
                 ]
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Tests\\": "tests",
-                    "Foo\\Bar\\": "tests/fixtures/Addon"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -3503,49 +3504,8 @@
                 "flat file",
                 "laravel",
                 "statamic"
-            ]
-        },
-        {
-            "name": "statamic/preset-tailwindcss",
-            "version": "0.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/statamic/preset-tailwindcss.git",
-                "reference": "8378d84996b7cd3b085685069d4f7117ad3c5a14"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/statamic/preset-tailwindcss/zipball/8378d84996b7cd3b085685069d4f7117ad3c5a14",
-                "reference": "8378d84996b7cd3b085685069d4f7117ad3c5a14",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "6.*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "StatamicFrontendPresets\\TailwindCssPreset\\TailwindCssPresetServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "StatamicFrontendPresets\\TailwindCssPreset\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
             ],
-            "description": "Statamic frontend preset for Tailwind CSS",
-            "keywords": [
-                "preset",
-                "statamic",
-                "tailwindcss"
-            ],
-            "time": "2019-10-24T20:08:26+00:00"
+            "time": "2020-01-17T21:02:59+00:00"
         },
         {
             "name": "statamic/stringy",
@@ -7618,6 +7578,48 @@
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
+            "name": "statamic/preset-tailwindcss",
+            "version": "0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/statamic/preset-tailwindcss.git",
+                "reference": "8378d84996b7cd3b085685069d4f7117ad3c5a14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/statamic/preset-tailwindcss/zipball/8378d84996b7cd3b085685069d4f7117ad3c5a14",
+                "reference": "8378d84996b7cd3b085685069d4f7117ad3c5a14",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "6.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "StatamicFrontendPresets\\TailwindCssPreset\\TailwindCssPresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StatamicFrontendPresets\\TailwindCssPreset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Statamic frontend preset for Tailwind CSS",
+            "keywords": [
+                "preset",
+                "statamic",
+                "tailwindcss"
+            ],
+            "time": "2019-10-24T20:08:26+00:00"
+        },
+        {
             "name": "theseer/tokenizer",
             "version": "1.1.3",
             "source": {
@@ -7709,7 +7711,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "statamic/cms": 20
+        "statamic/cms": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
