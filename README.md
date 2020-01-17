@@ -17,18 +17,23 @@
 - Itty bitty [Alpine.js](https://github.com/alpinejs/alpine) for interactions
 - :100: Lighthouse performance score
 
+## Screenshot
+
+<!-- insert screenshot -->
+
 ## Quick Start
 
-**1. Create a new site** using the `composer create-project` command
+**1. Create a new site** cloning the repo and removing the origin repo.
 
 ```
-composer create-project statamic/statamic-starter-cool-writings my-site --stability=dev
-```
-
-**2. Make a new user** – you'll want it to be a `super`.
-
-```
+git clone git@github.com:statamic/statamic-starter-cool-writings.git new-site
 cd my-site
+rm -rf .git
+```
+
+**2. Make a new user** – you'll want it to be a `super` so you have access to everything.
+
+```
 php please make:user
 ```
 
