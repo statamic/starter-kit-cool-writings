@@ -1,0 +1,42 @@
+title: 'Global Settings'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: site_name
+        field:
+          character_limit: 0
+          type: text
+          localizable: false
+          display: 'Site Name'
+      -
+        handle: social
+        field:
+          fields:
+            -
+              handle: url
+              field:
+                character_limit: 0
+                type: text
+                localizable: false
+                display: URL
+            -
+              handle: icon
+              field:
+                container: assets
+                mode: list
+                restrict: true
+                folder: site/social-icons
+                allow_uploads: true
+                max_files: 1
+                type: assets
+                localizable: false
+                display: Icon
+          mode: table
+          add_row: 'Add Link'
+          reorderable: true
+          type: grid
+          instructions: 'Set any social media links'
+          localizable: false
+          display: Social

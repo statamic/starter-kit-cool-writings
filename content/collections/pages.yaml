@@ -1,0 +1,11 @@
+title: Pages
+route: '{parent_uri}/{slug}'
+blueprints:
+  - page
+structure: pages
+revisions: false
+entry_order:
+  - 62136fa2-9e5c-4c38-a894-a2753f02f5ff
+  - 3f7a2998-5391-46e3-9153-8c2230d72f16
+  - home
+  - 3c4ac01d-9128-41a0-8711-7e3065e4ccf6

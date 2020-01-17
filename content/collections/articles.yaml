@@ -1,0 +1,13 @@
+title: Articles
+route: '{slug}'
+template: articles.show
+blueprints:
+  - article
+mount: b9e4bfe3-9c12-4553-b7ef-f43c22ffaa63
+taxonomies:
+  - topics
+revisions: false
+date: true
+date_behavior:
+  past: public
+  future: private

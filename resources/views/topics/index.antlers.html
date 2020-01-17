@@ -1,0 +1,12 @@
+<div class="max-w-5xl mx-auto relative mt-16">
+    {{ svg src="/assets/site/scratches" class="absolute text-gray-800 mt-8 top-0 left-0 w-20 hidden md:block" }}
+    <article class="py-32 max-w-2xl mx-auto">
+        <header class="content">
+            <h1>{{ title }}</h1>
+            {{ content }}
+        </header>
+        {{ topics sort="title" }}
+            <h2 class="text-4xl font-bold hover:text-teal"><a href="{{ url }}">{{ title }}</a></h2>
+        {{ /topics }}
+    </article>
+</div>

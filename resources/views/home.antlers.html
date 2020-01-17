@@ -1,0 +1,28 @@
+<div class="max-w-5xl mx-auto relative py-16 lg:pt-40 lg:pb-32">
+    <article class="content">
+        <p class="font-medium text-lg text-teal">{{ subtitle }}</p>
+        <h1>{{ content }}</h1>
+    </article>
+</div>
+
+<div class="max-w-2xl mx-auto mb-32">
+    {{ collection:articles limit="5" as="articles" }}
+        {{ if no_results }}
+            <h2 class="text-3xl italic tracking-tight">Feel the rhythm! Feel the rhyme! Get on up, it's writing time! Cool writings!</h2>
+        {{ /if }}
+
+        {{ articles }}
+            <div class="mb-16">
+                <h2 class="mb-4">
+                    <a href="{{ url }}" class="text-2xl hover:text-teal tracking-tight leading-tight font-bold">
+                        {{ title | widont }}
+                    </a>
+                </h2>
+                <p class="text-gray-600">
+                    <span class="text-gray-800 text-sm uppercase tracking-widest font-medium">{{ date }}</span> &mdash;
+                    {{ excerpt | widont ?? content | strip_tags | safe_truncate:160:...}}
+                </p>
+            </div>
+        {{ /articles }}
+    {{ /collection:articles }}
+</div>

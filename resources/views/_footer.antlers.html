@@ -1,0 +1,8 @@
+<nav class="flex items-center justify-between flex-wrap py-12 lg:py-24 max-w-5xl mx-auto">
+    <div class="text-sm">&copy; {{ now format="Y" }} {{ settings:site_name }} – Powered by <a href="https://statamic.com?ref=cool-writings" class="hover:text-teal">Statamic</a></div>
+    <div class="flex items-center">
+        {{ settings:social }}
+            <a href="{{ url }}" class="ml-4">{{ svg :src="icon" class="h-6 w-6 hover:text-teal" }}</a>
+        {{ /settings:social }}
+    </div>
+</nav>

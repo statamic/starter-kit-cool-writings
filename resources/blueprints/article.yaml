@@ -1,0 +1,32 @@
+title: 'Article'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          display: Title
+      -
+        handle: content
+        field:
+          type: markdown
+          display: Content
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+      -
+        handle: excerpt
+        field:
+          type: textarea
+          display: Excerpt
+          character_limit: 160
+      -
+        handle: author
+        field:
+          type: users
+          display: Author
+          default: current
