@@ -19,22 +19,22 @@
 
 ## Quick Start
 
-1. Create a new site using the `composer create-project` command
+**1. Create a new site** using the `composer create-project` command
 
 ```
 composer create-project statamic/statamic-starter-cool-writings my-site --stability=dev
 ```
 
-2. Make a new user
+**2. Make a new user** – you'll want it to be a `super`.
 
 ```
 cd my-site
 php please make:user
 ```
 
-3. Do your thing!
+**3. Do your thing!**
 
-If you're using [Laravel Valet](https://laravel.com/docs/valet) (or similar), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user.
+If you're using [Laravel Valet](https://laravel.com/docs/valet) (or similar), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Open up the source code, follow along with the [Statamic 3 docs](https://statamic.dev), and enjoy!
 
 ## Contributing
 
