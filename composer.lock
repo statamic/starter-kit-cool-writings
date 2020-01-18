@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d2676c54507278b0bbc28764e9d1164",
+    "content-hash": "378dc31448c659826cd0f50c30537fe4",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3506,6 +3506,46 @@
                 "statamic"
             ],
             "time": "2020-01-17T21:02:59+00:00"
+        },
+        {
+            "name": "statamic/static-site-generator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/statamic/static-site-generator.git",
+                "reference": "5b600c5d55c2361701170d2f5c107fb3abe12cd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/statamic/static-site-generator/zipball/5b600c5d55c2361701170d2f5c107fb3abe12cd0",
+                "reference": "5b600c5d55c2361701170d2f5c107fb3abe12cd0",
+                "shasum": ""
+            },
+            "require": {
+                "statamic/cms": "3.0.*@beta"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Static Site Generator",
+                    "description": "Static Site Generator addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "Statamic\\StaticSite\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Statamic\\StaticSite\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2019-12-16T15:34:07+00:00"
         },
         {
             "name": "statamic/stringy",
@@ -7711,7 +7751,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "statamic/cms": 10
+        "statamic/cms": 10,
+        "statamic/static-site-generator": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
