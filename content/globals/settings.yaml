@@ -13,5 +13,6 @@ data:
       url: 'https://github.com/statamic/starter-kit-cool-writings'
       icon: site/social-icons/github.svg
     -
+      name: Email
       url: 'mailto:jack@statamic.com'
       icon: site/social-icons/email.svg

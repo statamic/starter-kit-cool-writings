@@ -15,6 +15,12 @@ sections:
         field:
           fields:
             -
+              handle: name
+              field:
+                type: text
+                localizable: false
+                display: Name
+            -
               handle: url
               field:
                 character_limit: 0
