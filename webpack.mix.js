@@ -22,5 +22,8 @@ mix.postCss('resources/css/tailwind.css', 'public/css', [
 
 if (mix.inProduction()) {
   mix.version();
-  mix.purgeCss();
+  mix.purgeCss({
+    enabled: true,
+    whitelistPatternsChildren: [/^content$/],
+  });
 }
