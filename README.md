@@ -30,8 +30,8 @@ Watch the [Cool Writings video tour](https://www.youtube.com/watch?v=IgjJYfVF26Q
 **1. Create a new site** cloning the repo and removing the origin repo.
 
 ```
-git clone git@github.com:statamic/statamic-starter-cool-writings.git new-site
-cd my-site
+git clone git@github.com:statamic/statamic-starter-cool-writings.git cool-site
+cd cool-site
 rm -rf .git
 composer install
 cp .env.example .env && php artisan key:generate
