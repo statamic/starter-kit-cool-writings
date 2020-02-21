@@ -43,7 +43,20 @@ cp .env.example .env && php artisan key:generate
 php please make:user
 ```
 
-**3. Do your thing!**
+**3. Recompile the CSS** (optional)
+
+The [TailwindCSS](https://tailwindcss.com/) included in this kit is compiled with [PurgeCSS](https://purgecss.com/) to reduce filesize on any unused classes and selectors. If you want to modify anything, just recompile it.
+
+```
+npm i && npm run dev
+```
+
+To compile for production again:
+```
+npm run production
+```
+
+**4. Do your thing!**
 
 If you're using [Laravel Valet](https://laravel.com/docs/valet) (or similar), your site should be available at `http://cool-site.test`. You can access the control panel at `http://cool-site.test/cp` and login with your new user. Open up the source code, follow along with the [Statamic 3 docs](https://statamic.dev), and enjoy!
 
