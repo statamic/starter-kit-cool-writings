@@ -1,7 +1,5 @@
 title: Pages
 route: '{parent_uri}/{slug}'
-blueprints:
-  - page
 structure:
   root: true
   tree:

@@ -1,6 +1,5 @@
 id: 9242876a-41c4-42f8-96f8-ac92d6025406
 title: Settings
-blueprint: global_settings
 data:
   site_name: 'Cool Writings'
   social:
