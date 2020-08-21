@@ -52,6 +52,7 @@ npm i && npm run dev
 ```
 
 To compile for production again:
+
 ```
 npm run production
 ```
