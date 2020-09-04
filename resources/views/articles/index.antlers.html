@@ -21,6 +21,7 @@
         {{ /articles }}
 
         {{ paginate }}
+        {{ if prev_page || next_page }}
         <div class="flex justify-between text-xl -mx-16 pt-16 font-bold">
             <a href="{{ prev_page }}" class="{{ ! prev_page ?= 'opacity-25' }}">
                 &larr; Back to the future
@@ -29,6 +30,7 @@
                 Forward to the past &rarr;
             </a>
         </div>
+        {{ /if }}
         {{ /paginate }}
         {{ /collection:articles }}
     </article>
