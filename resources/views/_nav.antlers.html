@@ -19,7 +19,7 @@
     </div>
     <div class="w-full lg:w-auto lg:flex items-center" @click.away="showMobileNav = false" x-bind:class="{ 'hidden': ! showMobileNav }">
         {{ nav }}
-        <a href="{{ url }}" class="block {{ is_current || is_parent ??= 'font-medium text-gray-800' }} mt-4 lg:inline-block text-gray-600 hover:text-gray-800 lg:mt-0 mr-12">
+        <a href="{{ url }}" class="block {{ is_current || is_parent ?= 'font-medium text-gray-800' }} mt-4 lg:inline-block text-gray-600 hover:text-gray-800 lg:mt-0 mr-12">
             {{ title }}
         </a>
         {{ /nav }}
