@@ -4,21 +4,22 @@
     "keywords": ["statamic", "cms", "starter", "flat file", "laravel"],
     "type": "project",
     "require": {
-        "php": "^7.1.3 || ^8.0",
-        "fideloper/proxy": "^4.0",
-        "laravel/framework": "^6.2",
-        "laravel/tinker": "^1.0",
+        "php": "^7.3 || ^8.0",
+        "fideloper/proxy": "^4.2",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "laravel/framework": "^8.0",
+        "laravel/tinker": "^2.0",
         "statamic/cms": "3.0.*",
         "statamic/ssg": "dev-master"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.1",
-        "facade/ignition": "^1.3",
-        "filp/whoops": "^2.0",
-        "nunomaduro/collision": "^3.0",
-        "fzaninotto/faker": "^1.4",
-        "mockery/mockery": "^1.0",
-        "phpunit/phpunit": "^7.5"
+        "barryvdh/laravel-debugbar": "^3.5",
+        "facade/ignition": "^2.3.6",
+        "fzaninotto/faker": "^1.9.1",
+        "mockery/mockery": "^1.3.1",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3"
     },
     "config": {
         "optimize-autoloader": true,
@@ -32,12 +33,10 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
-        },
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ]
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -56,7 +55,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate"
+            "@php artisan key:generate --ansi"
         ]
     }
 }

@@ -74,8 +74,8 @@ return [
     */
 
     'passwords' => [
-        'resets' => config('auth.defaults.passwords'),
-        'activations' => config('auth.defaults.passwords'),
+        'resets' => 'resets',
+        'activations' => 'activations',
     ],
 
 ];
