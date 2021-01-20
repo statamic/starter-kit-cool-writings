@@ -4,14 +4,8 @@
         <h1>{{ title }}</h1>
         <div class="bg-gray-800 inline-block text-sm mb-16 pr-4 pl-16 -ml-16 uppercase tracking-widest text-white py-1 rounded-r-full">
             Published
-            {{ if topics | count === 1 }}
-                in {{ topics }}<a href="{{ url }}" class="text-teal-light no-underline hover:text-white">{{ title }}</a>{{ /topics }}
-            {{ /if }}
-            {{ if topics | count > 1 }}
-                in
-                {{ topics }}
-                    <a href="{{ url }}" class="text-teal-light no-underline hover:text-white">{{ title }}</a>{{ if not last }},{{ /if }}
-                {{ /topics }}
+            {{ if topics }}
+                in {{ topics }}<a href="{{ url }}" class="text-teal-light no-underline hover:text-white">{{ title }}</a>{{ unless last }}, {{ /unless }}{{ /topics }}
             {{ /if }}
             on {{ date format="M j, Y" }}
         </div>
