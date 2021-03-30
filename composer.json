@@ -10,8 +10,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "statamic/cms": "3.0.*",
-        "statamic/ssg": "dev-master"
+        "statamic/cms": "3.1.*",
+        "statamic/ssg": "^0.4.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
@@ -46,6 +46,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "pre-update-cmd": [
+            "Statamic\\Console\\Composer\\Scripts::preUpdateCmd"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
