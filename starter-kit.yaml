@@ -16,5 +16,6 @@ export_paths:
   - screenshot.png
   - tailwind.config.js
   - webpack.mix.js
+  - upgrade-cli-notice.php
 dependencies:
   statamic/ssg: ^0.6.0
