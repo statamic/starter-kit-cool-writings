@@ -1,26 +1,24 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "dev": "mix",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "mix --production",
+        "production": "mix --production"
     },
     "devDependencies": {
-        "autoprefixer": "^9.6.1",
-        "cross-env": "^5.1",
-        "laravel-mix": "^5.0",
-        "laravel-mix-purgecss": "^5.0.0",
-        "postcss-import": "^12.0.1",
-        "postcss-nested": "^4.1.2",
-        "postcss-preset-env": "^6.7.0",
-        "tailwindcss": "^1.1.2",
-        "vue-template-compiler": "^2.6.11"
+        "autoprefixer": "^10.4.0",
+        "cross-env": "^7.0",
+        "css-loader": "^5.2.7",
+        "laravel-mix": "^6.0",
+        "postcss": "^8.4.5",
+        "postcss-import": "^14.0.1",
+        "tailwindcss": "^3.0.23"
     },
     "dependencies": {
-        "alpinejs": "^1.9.2"
+        "alpinejs": "^3.9.1"
     }
 }

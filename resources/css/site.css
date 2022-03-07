@@ -68,7 +68,7 @@ h1 {
     > ul li > code,
     > ol li *:not(pre) code,
     > ol li > code {
-        @apply inline-block bg-gray-800 text-white text-sm p-1 leading-none whitespace-no-wrap font-mono align-baseline;
+        @apply inline-block bg-gray-800 text-white text-sm p-1 leading-none whitespace-nowrap font-mono align-baseline;
     }
 
     > pre, pre&, > ul li pre, > ol li pre {
