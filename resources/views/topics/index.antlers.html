@@ -5,8 +5,8 @@
             <h1>{{ title }}</h1>
             {{ content }}
         </header>
-        {{ topics sort="title" }}
-            <h2 class="text-4xl font-bold hover:text-teal"><a href="{{ url }}">{{ title }}</a></h2>
-        {{ /topics }}
+        {{ taxonomy:topics sort="title" }}
+            <h2 class="text-4xl font-bold hover:text-teal"><a href="{{ url }}">{{ title | title }}</a></h2>
+        {{ /taxonomy:topics }}
     </article>
 </div>
