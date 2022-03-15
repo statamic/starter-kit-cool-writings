@@ -16,7 +16,7 @@
         </h2>
         <p class="text-gray-600">
             <span class="text-gray-800 text-sm uppercase tracking-widest font-medium">{{ date }}</span> &mdash;
-            {{ excerpt | widont ?? content | strip_tags | safe_truncate:160:...}}
+            {{ excerpt | widont ?? content | strip_tags | safe_truncate(150, '...') }}
         </p>
     </div>
     {{ /entries }}

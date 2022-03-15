@@ -1,5 +1,7 @@
 export_paths:
   - content
+  - config/statamic/antlers.php
+  - config/statamic/ssg.php
   - resources/blueprints
   - resources/fieldsets
   - resources/css
