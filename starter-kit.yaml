@@ -5,6 +5,7 @@ export_paths:
   - resources/blueprints
   - resources/fieldsets
   - resources/css
+  - resources/js
   - resources/views
   - public/assets
   - public/css
