@@ -16,7 +16,7 @@
 - Beautifully responsive
 - Built with [TailwindCSS](https://tailwindcss.com)
 - Itty bitty [Alpine.js](https://github.com/alpinejs/alpine) for interactions
-- :100:/:100:/:100:/:100: Lighthouse score
+- 💯/💯/💯/💯 Lighthouse score
 
 ## Screenshot
 
