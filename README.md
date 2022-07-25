@@ -18,9 +18,11 @@
 - Itty bitty [Alpine.js](https://github.com/alpinejs/alpine) for interactions
 - 💯/💯/💯/💯 Lighthouse score
 
+<!-- statamic:hide -->
 ## Screenshot
 
 ![Screenshot](https://github.com/statamic/statamic-starter-cool-writings/raw/master/screenshot.png)
+<!-- /statamic:hide -->
 
 ## Video Tour
 
