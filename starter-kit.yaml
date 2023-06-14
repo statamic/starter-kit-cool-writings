@@ -1,6 +1,5 @@
 export_paths:
   - content
-  - config/statamic/antlers.php
   - config/statamic/ssg.php
   - resources/blueprints
   - resources/fieldsets
@@ -8,9 +7,11 @@ export_paths:
   - resources/js
   - resources/views
   - public/assets
+  - public/build
   - public/css
   - public/js
   - package.json
+  - postcss.config.js
   - tailwind.config.js
-  - webpack.mix.js
+  - vite.config.js
   - README.md
