@@ -2,7 +2,6 @@
 
 body {
     @apply text-gray-800;
-    font-feature-settings: "frac" 1;
 }
 
 h1 {
