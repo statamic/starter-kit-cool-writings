@@ -5,10 +5,5 @@
             "name": "Starter Kit Cool Writings",
             "description": "Starter Kit Cool Writings starter kit"
         }
-    },
-    "scripts": {
-        "post-create-project-cmd": [
-            "@php upgrade-cli-notice.php"
-        ]
     }
 }
