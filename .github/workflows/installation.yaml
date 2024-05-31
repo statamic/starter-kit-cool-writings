@@ -57,5 +57,5 @@ jobs:
       - name: Test Assets can be build
         working-directory: ./app
         run: |
-          npm ci
+          npm update
           npm run build
