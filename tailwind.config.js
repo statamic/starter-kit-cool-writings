@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   content: [
         './resources/**/*.antlers.html',
         './resources/**/*.blade.php',
