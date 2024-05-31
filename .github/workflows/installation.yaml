@@ -33,11 +33,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Statamic CLI
-        run: composer global require statamic/cli
-
       - name: Create a new Statamic Project
-        run: statamic new app --no-interaction --ansi
+        run: composer create-project statamic/statamic app --no-interaction
 
       - name: Link Starter Kit to Statamic Project
         working-directory: ./app
