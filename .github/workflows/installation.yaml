@@ -37,7 +37,7 @@ jobs:
         run: composer global require statamic/cli
 
       - name: Create a new Statamic Project
-        run: statamic new app --no-interaction
+        run: statamic new app --no-interaction --ansi
 
       - name: Link Starter Kit to Statamic Project
         working-directory: ./app
