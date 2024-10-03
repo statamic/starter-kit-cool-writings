@@ -24,4 +24,5 @@ fields:
     handle: avatar
     field:
       type: assets
+      container: assets           
       max_files: 1
