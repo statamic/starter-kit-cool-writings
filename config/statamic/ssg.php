@@ -40,13 +40,25 @@ return [
 
     'copy' => [
         public_path('assets') => 'assets',
-        public_path('css') => 'css',
-        public_path('js') => 'js',
+        public_path('build') => 'build',
     ],
 
     'symlinks' => [
-        // public_path('css') => 'css',
-        // public_path('js') => 'js',
+        // public_path('build') => 'build',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Additional URLs
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define a list of additional URLs to be generated,
+    | such as manually created routes.
+    |
+    */
+
+    'urls' => [
+        //
     ],
 
     /*
@@ -64,6 +76,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Pagination Route
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define how paginated entries are routed. This will take
+    | effect wherever pagination is detected in your antlers templates,
+    | like if you use the `paginate` param on the `collection` tag.
+    |
+    */
+
+    'pagination_route' => '{url}/{page_name}/{page_number}',
+
+    /*
+    |--------------------------------------------------------------------------
     | Glide
     |--------------------------------------------------------------------------
     |
@@ -75,6 +100,20 @@ return [
 
     'glide' => [
         'directory' => 'img',
+        'override' => true,
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Failures
+    |--------------------------------------------------------------------------
+    |
+    | You may configure whether the console command will exit early with a
+    | failure status code when it encounters errors or warnings. You may
+    | want to do this to prevent deployments in CI environments, etc.
+    |
+    */
+
+    'failures' => false, // 'errors' or 'warnings'
 
 ];
