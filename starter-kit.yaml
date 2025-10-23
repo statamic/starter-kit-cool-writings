@@ -8,8 +8,6 @@ export_paths:
   - resources/views
   - public/assets
   - public/build
-  - public/css
-  - public/js
   - package.json
   - postcss.config.js
   - tailwind.config.js
