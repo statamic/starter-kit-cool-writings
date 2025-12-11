@@ -1,0 +1,14 @@
+site_name: 'Cool Writings'
+social:
+  -
+    name: Twitter
+    url: 'https://twitter.com/jackmcdade'
+    icon: site/social-icons/twitter.svg
+  -
+    name: Github
+    url: 'https://github.com/statamic/starter-kit-cool-writings'
+    icon: site/social-icons/github.svg
+  -
+    name: Email
+    url: 'mailto:jack@statamic.com'
+    icon: site/social-icons/email.svg
