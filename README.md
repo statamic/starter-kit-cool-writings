@@ -4,8 +4,6 @@
 <h1 align="center">
   Statamic Starter Kit: Cool Writings
 </h1>
-
-![Statamic 4+](https://img.shields.io/badge/Statamic-4+-FF269E?style=for-the-badge&link=https://statamic.com)
 <!-- /statamic:hide -->
 
 ## Features
