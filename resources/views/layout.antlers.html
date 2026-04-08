@@ -4,8 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title }} — {{ settings:site_name }}</title>
-        <meta name="description" content="{{ excerpt ?? title }}">
+        {{ if {installed:statamic/seo-pro} }}
+            {{ seo_pro:meta }}
+        {{ else }}
+            <title>{{ title }} — {{ settings:site_name }}</title>
+            <meta name="description" content="{{ excerpt ?? title }}">
+        {{ /if }}
         <meta name="theme-color" content="00908F">
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>

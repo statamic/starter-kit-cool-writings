@@ -1,0 +1,15 @@
+site_defaults:
+  title: '@seo:title'
+  description: '@seo:content'
+  site_name: '{{ settings:site_name }}'
+  site_name_position: after
+  site_name_separator: '-'
+  canonical_url: '@seo:permalink'
+  json_ld_entity: organization
+  robots_indexing: index
+  robots_following: follow
+  og_title: '@seo:title'
+  twitter_title: '@seo:title'
+  twitter_description: '@seo:description'
+  priority: 0.5
+  change_frequency: monthly
