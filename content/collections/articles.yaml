@@ -9,3 +9,6 @@ date: true
 date_behavior:
   past: public
   future: private
+inject:
+  seo:
+    description: '@seo:excerpt'
