@@ -1,12 +1,17 @@
 {
   "resources/css/site.css": {
-    "file": "assets/site-3cd754b3.css",
-    "isEntry": true,
-    "src": "resources/css/site.css"
+    "file": "assets/site-CC2xz30s.css",
+    "name": "site",
+    "names": [
+      "site.css"
+    ],
+    "src": "resources/css/site.css",
+    "isEntry": true
   },
   "resources/js/site.js": {
-    "file": "assets/site-96d6c777.js",
-    "isEntry": true,
-    "src": "resources/js/site.js"
+    "file": "assets/site-BIEtqgun.js",
+    "name": "site",
+    "src": "resources/js/site.js",
+    "isEntry": true
   }
 }
