@@ -94,7 +94,7 @@ h1 {
     }
 }
 
-@media (width >= 1024px) {
+@variant lg {
     h1 {
         @apply text-6xl;
     }
