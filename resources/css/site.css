@@ -1,4 +1,10 @@
-@import "tailwindcss/base";
-@import "style";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Menlo', monospace;
+    --color-teal: #008483;
+    --color-teal-light: #a6d0cf;
+}
+
+@import "./style.css";

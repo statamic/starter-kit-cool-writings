@@ -91,12 +91,10 @@ h1 {
         p {
             @apply leading-normal;
         }
-  }
+    }
 }
 
-
-/* Responsive Wangjangling */
-@screen lg {
+@variant lg {
     h1 {
         @apply text-6xl;
     }
