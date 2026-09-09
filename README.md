@@ -1,6 +1,7 @@
-<!-- statamic:hide -->
-# Cool Writings
-<!-- /statamic:hide -->
+<!-- statamic:hide --><p align="center"><img src="https://statamic.com/assets/branding/squircle/statamic-mark-lime.svg" width="100" alt="Statamic Logo" /></p>
+<h1 align="center">
+  Starter Kit: Cool Writings
+</h1>
 
 A typography-led journal for Statamic, with generous whitespace, teal ink details, and a little ’90s personality. Version 3.0.0 brings a complete editorial refresh, built-in article search, and light and dark themes.
 
