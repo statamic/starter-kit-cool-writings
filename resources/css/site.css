@@ -1,10 +1,36 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import './prose.css';
+
+@custom-variant dark {
+    &:where([data-theme='dark'], [data-theme='dark'] *) {
+        @slot;
+    }
+    @media (prefers-color-scheme: dark) {
+        &:where(:root:not([data-theme]), :root:not([data-theme]) *) {
+            @slot;
+        }
+    }
+}
 
 @theme {
-    --font-sans: 'Inter', sans-serif;
+    --font-sans: 'InterVariable', 'Inter', sans-serif;
     --font-mono: 'Menlo', monospace;
-    --color-teal: #008483;
+    --color-teal: #007c79;
     --color-teal-light: #a6d0cf;
 }
 
-@import "./style.css";
+/* Shared keyboard focus and Alpine's pre-initialization hiding belong in the base layer. */
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-teal);
+        outline-offset: 5px;
+
+        @variant dark {
+            outline-color: var(--color-teal-light);
+        }
+    }
+}

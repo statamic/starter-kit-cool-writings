@@ -1,0 +1,5 @@
+<button type="button" role="switch" aria-label="Lights" :aria-checked="(! $store.theme.dark).toString()" :title="$store.theme.dark ? 'Turn the lights on' : 'Turn the lights off'" @click="$store.theme.toggle()" x-cloak class="group/switch flex h-12 w-11 shrink-0 items-center justify-center rounded-md {{ if placement == 'mobile' }}order-3 max-sm:ml-auto lg:hidden{{ else }}order-4 -ml-5 max-lg:hidden{{ /if }}">
+    <span aria-hidden="true" class="block h-6.5 w-4.5 rounded-full border border-gray-500/80 bg-gray-200 p-0.5 group-hover/switch:border-teal dark:border-gray-400/70 dark:bg-[#101916] dark:group-hover/switch:border-teal-light">
+        <span class="block size-full rounded-full border border-gray-300 border-t-white border-b-gray-400 bg-linear-to-b from-white to-gray-300 [transform:perspective(35px)_translateY(-1.5px)_rotateX(-32deg)] transition-transform duration-200 ease-out motion-reduce:transition-none dark:border-teal-light/20 dark:border-t-black/40 dark:border-b-teal-light/70 dark:from-[#17241f] dark:to-[#59776a] dark:[transform:perspective(35px)_translateY(1.5px)_rotateX(32deg)]"></span>
+    </span>
+</button>

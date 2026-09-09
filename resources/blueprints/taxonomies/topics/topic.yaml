@@ -9,3 +9,10 @@ sections:
           type: text
           localizable: false
           display: Title
+      -
+        handle: description
+        field:
+          type: textarea
+          display: Description
+          instructions: A short introduction shown in the topic list and on its page.
+          localizable: false

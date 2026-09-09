@@ -1,16 +1,25 @@
-<div class="max-w-5xl mx-auto relative mt-16 content">
-    {{ svg src="/assets/site/scratches" class="absolute text-gray-800 mt-8 top-0 left-0 w-20 hidden md:block" }}
-    <article class="lg:py-32 max-w-2xl mx-auto">
-        <h1>{{ title }}</h1>
-        <div class="bg-gray-800 inline-block text-sm mb-16 pr-4 pl-16 -ml-16 uppercase tracking-widest text-white py-1 rounded-r-full">
-            Published
-            {{ if topics }}
-                in {{ topics }}<a href="{{ url }}" class="text-teal-light no-underline hover:text-white">{{ title }}</a>{{ unless last }}, {{ /unless }}{{ /topics }}
-            {{ /if }}
-            on {{ date format="M j, Y" }}
-        </div>
-        <div class="content">
-            {{ content | widont }}
-        </div>
-    </article>
+<div class="relative mx-auto max-w-5xl pt-[clamp(--spacing(11),7vw,--spacing(24))]">
+    {{ partial:margin_mark }}
+    <div class="mx-auto max-w-2xl">
+        <article>
+            <header class="mb-10 sm:mb-14">
+                <h1 class="text-[clamp(2.6rem,5vw,3.75rem)] leading-[1.1] font-[750] tracking-tighter text-pretty wrap-anywhere">{{ title | widont }}</h1>
+                <div class="mt-7 flex flex-wrap items-baseline gap-x-4 gap-y-2 text-base leading-[1.8] text-gray-500 sm:text-sm dark:text-gray-400">
+                    <time class="tabular-nums" datetime="{{ date format='Y-m-d' }}">{{ date format="F j, Y" }}</time>
+                    {{ if topics }}<span class="flex flex-wrap gap-x-3 gap-y-1">{{ topics }}<a href="{{ url }}" class="text-teal underline dark:text-teal-light">{{ title }}</a>{{ /topics }}</span>{{ /if }}
+                </div>
+            </header>
+            <div class="prose max-w-[65ch] text-lg leading-[1.8] wrap-anywhere dark:text-gray-300">{{ content | widont }}</div>
+            <div class="my-14 flex justify-center text-teal dark:text-teal-light" aria-hidden="true">{{ svg src="/assets/site/end-mark.svg" class="h-8 w-12" }}</div>
+        </article>
+        {{ collection:articles :id:not="id" sort="date:desc" limit="2" as="other_articles" }}
+            {{ unless no_results }}
+                <section class="mt-16" aria-labelledby="read-next">
+                    <h2 id="read-next" class="flex items-center gap-4 text-base font-medium text-gray-500 after:h-px after:flex-1 after:bg-gray-900/12 after:content-[''] dark:text-gray-100 dark:after:bg-white/12">A little more reading</h2>
+                    <div class="mt-10 space-y-14">{{ other_articles }}{{ partial:article_row }}{{ /other_articles }}</div>
+                </section>
+            {{ /unless }}
+        {{ /collection:articles }}
+        <div class="mt-12"><a href="{{ link id='b9e4bfe3-9c12-4553-b7ef-f43c22ffaa63' }}" class="group inline-flex min-h-12 items-center gap-3 font-medium text-teal dark:text-teal-light">{{ partial:arrow direction="back" }} All the writings</a></div>
+    </div>
 </div>

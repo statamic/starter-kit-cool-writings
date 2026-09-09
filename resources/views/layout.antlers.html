@@ -1,21 +1,36 @@
 <!doctype html>
-<html lang="{{ site:short_locale }}">
+<html class="scroll-pt-8 scheme-light dark:scheme-dark" lang="{{ site:short_locale }}">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {{ if {installed:statamic/seo-pro} }}
             {{ seo_pro:meta }}
         {{ else }}
-            <title>{{ title }} — {{ settings:site_name }}</title>
-            <meta name="description" content="{{ excerpt ?? title }}">
+            <title>{{ title ?? 'Page not found' }} — {{ settings:site_name }}</title>
+            <meta name="description" content="{{ excerpt ?? title ?? 'Page not found' }}">
         {{ /if }}
-        <meta name="theme-color" content="00908F">
+        <script>
+            // Apply a saved choice before the stylesheet paints the page.
+            try {
+                const theme = localStorage.getItem('cool-writings-theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {}
+        </script>
+        <meta name="theme-color" content="#007c79" data-theme-color="light" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#111918" data-theme-color="dark" media="(prefers-color-scheme: dark)">
+        <link rel="preconnect" href="https://rsms.me">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
-    <body class="bg-white font-sans leading-normal text-grey-800 px-4 sm:px-10" x-data="{ showMobileNav: false }">
+    <body class="relative min-h-svh bg-white px-5 font-sans font-features-['cv11','ss01'] text-pretty text-gray-800 antialiased selection:bg-[#c9e9e2] selection:text-[#182c2b] sm:px-10 [&_a]:underline-offset-[0.22em] [&_button]:cursor-pointer dark:bg-[#111918] dark:text-gray-100 dark:selection:bg-teal-light/25 dark:selection:text-gray-100">
+        {{ partial:canvas_frame }}
+        <a href="#main" class="absolute -top-24 left-4 z-20 bg-white px-4 py-3 focus:top-4 dark:bg-[#111918]">Skip to content</a>
         {{ partial:nav }}
-        {{ template_content }}
+        <main id="main" class="isolate" tabindex="-1">
+            {{ template_content }}
+        </main>
         {{ partial:footer }}
     </body>
 </html>

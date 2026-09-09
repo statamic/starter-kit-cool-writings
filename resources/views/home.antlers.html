@@ -1,28 +1,19 @@
-<div class="max-w-5xl mx-auto relative py-16 lg:pt-40 lg:pb-32">
-    <article class="content">
-        <p class="font-medium text-lg text-teal">{{ subtitle }}</p>
-        <h1>{{ content }}</h1>
-    </article>
-</div>
+<header class="mx-auto max-w-5xl pt-[clamp(--spacing(12),8vw,--spacing(28))] pb-[clamp(--spacing(18),10vw,--spacing(32))]">
+    {{ if subtitle }}<p class="mb-[1.6rem] flex items-center gap-[0.8rem] text-base font-medium text-teal before:h-0.5 before:w-6 before:-rotate-5 before:bg-current before:content-[''] dark:text-teal-light">{{ subtitle }}</p>{{ /if }}
+    <h1 class="max-w-[25ch] text-[clamp(2.6rem,5.4vw,4.25rem)] leading-[1.08] font-[750] tracking-[-0.052em] text-balance wrap-anywhere">{{ content | strip_tags }}</h1>
+    <div class="mt-10 flex flex-wrap items-center justify-end gap-x-5 gap-y-3 text-sm leading-[1.8] text-gray-500 dark:text-gray-400">
+        <span class="text-teal dark:text-teal-light" aria-hidden="true">{{ svg src="/assets/site/underline.svg" class="h-4 w-14" }}</span>
+        <a href="{{ link id='62136fa2-9e5c-4c38-a894-a2753f02f5ff' }}" class="hover:underline focus-visible:underline">A secret public journal. <span class="text-teal dark:text-teal-light">Very hush-hush.</span></a>
+    </div>
+</header>
 
-<div class="max-w-2xl mx-auto mb-32">
-    {{ collection:articles limit="5" as="articles" }}
-        {{ if no_results }}
-            <h2 class="text-3xl italic tracking-tight">Feel the rhythm! Feel the rhyme! Get on up, it's writing time! Cool writings!</h2>
-        {{ /if }}
-
-        {{ articles }}
-            <div class="mb-16">
-                <h2 class="mb-4">
-                    <a href="{{ url }}" class="text-2xl hover:text-teal tracking-tight leading-tight font-bold">
-                        {{ title | widont }}
-                    </a>
-                </h2>
-                <p class="text-gray-600">
-                    <span class="text-gray-800 text-sm uppercase tracking-widest font-medium">{{ date }}</span> &mdash;
-                    {{ excerpt | widont ?? content | strip_tags | safe_truncate(150, '...') }}
-                </p>
-            </div>
-        {{ /articles }}
-    {{ /collection:articles }}
-</div>
+<section class="mx-auto max-w-2xl" aria-labelledby="latest-writings">
+    <h2 id="latest-writings" class="flex items-center gap-4 text-base font-medium text-gray-500 after:h-px after:flex-1 after:bg-gray-900/12 after:content-[''] dark:text-gray-100 dark:after:bg-white/12">Latest writings</h2>
+    <div class="mt-10 space-y-14">
+        {{ collection:articles limit="5" sort="date:desc" as="articles" }}
+            {{ if no_results }}<p class="mt-8 text-lg leading-[1.75] text-gray-600 dark:text-gray-300">The notebook's open. The first story is still on its way.</p>{{ /if }}
+            {{ articles }}{{ partial:article_row }}{{ /articles }}
+        {{ /collection:articles }}
+    </div>
+    <div class="mt-12"><a href="{{ link id='b9e4bfe3-9c12-4553-b7ef-f43c22ffaa63' }}" class="group inline-flex min-h-12 items-center gap-3 font-medium text-teal dark:text-teal-light">All the writings {{ partial:arrow }}</a></div>
+</section>

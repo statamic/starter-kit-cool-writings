@@ -1,0 +1,5 @@
+{{ if direction == 'back' }}
+    {{ svg src="/assets/site/arrow.svg" class="h-4.5 w-8 shrink-0 rotate-180 transition-transform duration-200 ease-out group-hover:-translate-x-1 group-focus-visible:-translate-x-1 motion-reduce:transition-none" aria-hidden="true" focusable="false" }}
+{{ else }}
+    {{ svg src="/assets/site/arrow.svg" class="h-4.5 w-8 shrink-0 transition-transform duration-200 ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1 motion-reduce:transition-none" aria-hidden="true" focusable="false" }}
+{{ /if }}

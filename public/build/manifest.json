@@ -1,15 +1,27 @@
 {
+  "public/assets/site/quote.svg": {
+    "file": "assets/quote-CIXoJF4c.svg",
+    "src": "public/assets/site/quote.svg"
+  },
+  "public/assets/site/underline.svg": {
+    "file": "assets/underline-nvdOxfwd.svg",
+    "src": "public/assets/site/underline.svg"
+  },
   "resources/css/site.css": {
-    "file": "assets/site-BzeO00Og.css",
+    "file": "assets/site-p5LBxASW.css",
     "name": "site",
     "names": [
       "site.css"
     ],
     "src": "resources/css/site.css",
-    "isEntry": true
+    "isEntry": true,
+    "assets": [
+      "assets/quote-CIXoJF4c.svg",
+      "assets/underline-nvdOxfwd.svg"
+    ]
   },
   "resources/js/site.js": {
-    "file": "assets/site-BIEtqgun.js",
+    "file": "assets/site-DmgaeWfT.js",
     "name": "site",
     "src": "resources/js/site.js",
     "isEntry": true

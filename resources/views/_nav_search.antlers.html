@@ -1,0 +1,10 @@
+<form action="/search" method="get" role="search" aria-label="Search writings"
+    class="group/search flex w-11 shrink-0 items-center border-b border-transparent transition-[width] duration-200 ease-out data-open:w-[min(16rem,calc(100%-6rem))] data-open:border-gray-300 data-open:focus-within:border-teal motion-reduce:transition-none lg:data-open:w-52 {{ if placement == 'mobile' }}order-2 ml-auto max-sm:absolute max-sm:top-10 max-sm:right-24 max-sm:ml-0 max-sm:bg-white lg:hidden{{ else }}order-3 max-lg:hidden{{ /if }} dark:data-open:border-gray-600 dark:data-open:focus-within:border-teal-light dark:max-sm:bg-[#111918]"
+    :data-open="searchOpen ? '' : null"
+    @submit="if (! searchOpen) { $event.preventDefault(); openSearch() }"
+    @click.outside="closeSearch(false)"
+    @focusout="if (! $el.contains($event.relatedTarget)) closeSearch(false)">
+    <label class="sr-only" for="{{ placement }}-nav-query">Search writings</label>
+    <input id="{{ placement }}-nav-query" x-ref="{{ placement }}SearchInput" class="h-12 w-0 min-w-0 flex-1 p-0 text-base leading-[1.5] group-not-data-open/search:invisible group-data-open/search:pl-2 placeholder:text-gray-500 focus:outline-none lg:text-sm dark:placeholder:text-gray-400" type="search" name="q" placeholder="Find a story…" maxlength="200" value="{{ search_query | entities }}" disabled :disabled="! searchOpen">
+    <button type="submit" x-ref="{{ placement }}SearchButton" class="grid h-12 w-11 shrink-0 place-items-center text-gray-600 hover:text-teal dark:text-gray-300 dark:hover:text-teal-light" aria-label="Search writings" :aria-label="searchOpen ? 'Submit search' : 'Search writings'" aria-expanded="false" :aria-expanded="searchOpen.toString()" aria-controls="{{ placement }}-nav-query">{{ partial:search_icon }}</button>
+</form>

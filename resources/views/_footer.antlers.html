@@ -1,10 +1,14 @@
-<nav class="flex items-center justify-between flex-wrap py-12 lg:py-24 max-w-5xl mx-auto">
-    <div class="text-sm">&copy; {{ now format="Y" }} {{ settings:site_name }} – Powered by <a href="https://statamic.com?ref=cool-writings" class="hover:text-teal">Statamic</a></div>
-    <div class="flex items-center">
-        {{ settings:social }}
-            <a href="{{ url }}" class="ml-4" aria-label="{{ name }}" rel="noopener">
-                {{ svg :src="icon" class="h-6 w-6 hover:text-teal" }}
-            </a>
-        {{ /settings:social }}
+<footer class="-mx-3 mt-[clamp(--spacing(20),12vw,--spacing(36))] border-t border-[#d4e3e0] px-3 text-base leading-[1.8] text-gray-500 sm:-mx-6 sm:px-6 sm:text-sm dark:border-[#2b403d] dark:text-gray-400">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-8 gap-y-4 pt-8 pb-10">
+        <p><span class="block text-[1.125em] leading-normal font-semibold text-gray-800 dark:text-gray-100">&copy; {{ now format="Y" }} {{ settings:site_name }}</span>Powered by <a href="https://statamic.com?ref=cool-writings" class="hover:text-teal dark:hover:text-teal-light">Statamic</a></p>
+        {{ if settings:social }}
+            <nav class="flex flex-wrap gap-1" aria-label="Social links">
+                {{ settings:social }}
+                    <a href="{{ url }}" class="flex size-12 items-center justify-center text-gray-600 hover:text-teal dark:text-gray-300 dark:hover:text-teal-light" aria-label="{{ name }}" rel="noopener">
+                        {{ svg :src="icon" class="size-4.5 fill-current" aria-hidden="true" focusable="false" }}
+                    </a>
+                {{ /settings:social }}
+            </nav>
+        {{ /if }}
     </div>
-</nav>
+</footer>

@@ -1,6 +1,8 @@
 export_paths:
   - content
   - config/statamic/ssg.php
+  - config/statamic/search.php
+  - routes/web.php
   - resources/addons/seo-pro.yaml
   - resources/blueprints
   - resources/fieldsets

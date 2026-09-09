@@ -1,1 +1,14 @@
-<p>404 Page not found.</p>
+<div class="relative mx-auto max-w-5xl pt-[clamp(--spacing(11),7vw,--spacing(24))]">
+    {{ partial:margin_mark }}
+    <div class="mx-auto max-w-2xl">
+        <header class="mb-10 sm:mb-14">
+            <p class="mb-4 font-medium text-teal dark:text-teal-light">Error 404</p>
+            <h1 class="text-[clamp(2.6rem,5vw,3.75rem)] leading-[1.1] font-[750] tracking-tighter text-pretty wrap-anywhere">I could've sworn<br>it was here.</h1>
+            <p class="mt-6 text-lg leading-[1.75] text-gray-600 dark:text-gray-300">Looks like this page slipped out of the notebook. Let's find you something else to read.</p>
+        </header>
+        <div class="flex flex-wrap gap-x-8 gap-y-2">
+            <a href="/" class="group inline-flex min-h-12 items-center gap-3 font-medium text-teal dark:text-teal-light">{{ partial:arrow direction="back" }} Back home</a>
+            <a href="{{ link id='b9e4bfe3-9c12-4553-b7ef-f43c22ffaa63' }}" class="group inline-flex min-h-12 items-center gap-3 font-medium text-teal dark:text-teal-light">Browse the writings {{ partial:arrow }}</a>
+        </div>
+    </div>
+</div>

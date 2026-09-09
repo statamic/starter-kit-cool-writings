@@ -1,23 +1,17 @@
-<div class="max-w-5xl mx-auto relative mt-16 content">
-    {{ svg src="/assets/site/scratches" class="absolute text-gray-800 mt-8 top-0 left-0 w-20 hidden md:block" }}
-    <article class="pt-32 max-w-2xl mx-auto content">
-        <p class="font-medium text-teal mb-0">{{ heading ?? "Articles about" }}</p>
-        <h1>{{ title }}</h1>
-        {{ content }}
-    </article>
-</div>
-<div class="max-w-2xl mx-auto mb-32">
-    {{ entries }}
-    <div class="mb-16">
-        <h2 class="mb-4">
-            <a href="{{ url }}" class="text-2xl hover:text-teal tracking-tight leading-tight font-bold">
-                {{ title | widont }}
-            </a>
-        </h2>
-        <p class="text-gray-600">
-            <span class="text-gray-800 text-sm uppercase tracking-widest font-medium">{{ date }}</span> &mdash;
-            {{ excerpt | widont ?? content | strip_tags | safe_truncate(150, '...') }}
-        </p>
+<div class="relative mx-auto max-w-5xl pt-[clamp(--spacing(11),7vw,--spacing(24))]">
+    {{ partial:margin_mark }}
+    <div class="mx-auto max-w-2xl">
+        <header class="mb-10 sm:mb-14">
+            <p class="mb-4 font-medium text-teal dark:text-teal-light">Articles about</p>
+            <h1 class="text-[clamp(2.6rem,5vw,3.75rem)] leading-[1.1] font-[750] tracking-tighter text-pretty wrap-anywhere">{{ title }}</h1>
+            {{ if description }}<p class="mt-6 text-lg leading-[1.75] text-gray-600 dark:text-gray-300">{{ description }}</p>{{ /if }}
+        </header>
+        <div class="mt-10 space-y-14">
+            {{ collection:articles :taxonomy:topics="slug" sort="date:desc" as="topic_articles" }}
+                {{ if no_results }}<p class="mt-8 text-lg leading-[1.75] text-gray-600 dark:text-gray-300">Nothing in this corner of the notebook yet. There's plenty to read in the others.</p>{{ /if }}
+                {{ topic_articles }}{{ partial:article_row }}{{ /topic_articles }}
+            {{ /collection:articles }}
+        </div>
+        <div class="mt-12"><a href="{{ link id='f5a53468-017e-4725-b5b6-a745df7e94cb' }}" class="group inline-flex min-h-12 items-center gap-3 font-medium text-teal dark:text-teal-light">{{ partial:arrow direction="back" }} All topics</a></div>
     </div>
-    {{ /entries }}
 </div>

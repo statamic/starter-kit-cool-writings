@@ -1,0 +1,5 @@
+<article class="relative">
+    <p class="text-base leading-[1.5] text-gray-500 tabular-nums sm:text-sm lg:absolute lg:top-1 lg:right-[calc(100%+(--spacing(11)))] lg:w-20 lg:text-right dark:text-gray-400"><time class="flex flex-wrap gap-[0.35em] lg:block" datetime="{{ date format='Y-m-d' }}"><span>{{ date format="M j" }}</span><span class="lg:mt-1 lg:block lg:text-xs lg:leading-[1.5] lg:text-teal dark:lg:text-teal-light">{{ date format="Y" }}</span></time></p>
+    <h2 class="mt-[0.65rem] text-[clamp(1.45rem,2.6vw,1.75rem)] leading-[1.25] font-bold tracking-[-0.035em] text-pretty wrap-anywhere lg:mt-0 lg:text-3xl"><a href="{{ url }}" class="decoration-1 hover:text-teal hover:underline focus-visible:text-teal focus-visible:underline dark:hover:text-gray-100 dark:focus-visible:text-gray-100">{{ title | widont }}</a></h2>
+    <p class="mt-3 text-base leading-[1.75] wrap-anywhere text-gray-600 dark:text-gray-300">{{ if excerpt }}{{ excerpt | widont }}{{ else }}{{ content | strip_tags | safe_truncate(150, '…') | widont }}{{ /if }}</p>
+</article>

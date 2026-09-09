@@ -1,0 +1,49 @@
+<div class="relative mx-auto max-w-5xl pt-[clamp(--spacing(11),7vw,--spacing(24))]">
+    {{ partial:margin_mark }}
+    <div class="mx-auto max-w-2xl">
+        <header class="mb-12">
+            <p class="mb-4 font-medium text-teal dark:text-teal-light">Somewhere in the notebook</p>
+            <h1 class="text-[clamp(2.6rem,5vw,3.75rem)] leading-[1.1] font-[750] tracking-tighter text-pretty wrap-anywhere">Find a story.</h1>
+            <p class="mt-6 text-lg leading-[1.75] text-gray-600 dark:text-gray-300">A half-remembered dance move. A very important soda. It’s probably in here somewhere.</p>
+            <form action="/search" method="get" role="search" aria-label="Search the journal" class="mt-9 flex items-center border-b-2 border-gray-800 focus-within:border-teal dark:border-gray-500 dark:focus-within:border-teal-light">
+                <label class="sr-only" for="search-query">Search article titles and text</label>
+                <input class="w-full min-w-0 px-1 py-4 text-[clamp(1rem,2.5vw,1.35rem)] text-gray-800 placeholder:text-gray-500 focus:outline-none dark:text-gray-100 dark:placeholder:text-gray-400" id="search-query" type="search" name="q" placeholder="What are you looking for?" maxlength="200" value="{{ search_query | entities }}" aria-describedby="search-hint">
+                <button type="submit" aria-label="Search" class="grid size-14 shrink-0 place-items-center text-teal hover:text-gray-800 dark:text-teal-light dark:hover:text-gray-100">{{ svg src="/assets/site/arrow.svg" class="h-5 w-8" aria-hidden="true" focusable="false" }}</button>
+            </form>
+            <p id="search-hint" class="mt-3 text-sm leading-[1.5] text-gray-500 dark:text-gray-400">Search all article titles and text.</p>
+        </header>
+
+        {{ if has_search_query }}
+            {{ if has_articles }}
+                {{ search:results index="writings" :for="search_query" paginate="10" as="found_articles" }}
+                    {{ if no_results }}
+                        {{ partial:search_empty }}
+                    {{ else }}
+                        <h2 class="flex items-center gap-4 text-base leading-[1.6] font-medium wrap-anywhere text-gray-500 after:h-px after:min-w-4 after:flex-1 after:bg-gray-900/12 after:content-[''] dark:text-gray-100 dark:after:bg-white/12">{{ paginate:total_items }} {{ if paginate:total_items == 1 }}story{{ else }}stories{{ /if }} found for “{{ search_query | entities }}”</h2>
+                        <div class="mt-10 space-y-14">{{ found_articles }}{{ partial:article_row }}{{ /found_articles }}</div>
+                    {{ /if }}
+                    {{ paginate }}
+                        {{ if prev_page || next_page }}
+                            <nav class="mt-12 flex flex-wrap justify-between gap-4" aria-label="Search results pagination">
+                                {{ if prev_page }}<a href="{{ prev_page | entities }}" class="group inline-flex min-h-12 items-center gap-3 font-medium text-teal dark:text-teal-light" rel="prev">{{ partial:arrow direction="back" }} Previous results</a>{{ /if }}
+                                {{ if next_page }}<a href="{{ next_page | entities }}" class="group ml-auto inline-flex min-h-12 items-center gap-3 font-medium text-teal dark:text-teal-light" rel="next">More results {{ partial:arrow }}</a>{{ /if }}
+                            </nav>
+                        {{ /if }}
+                    {{ /paginate }}
+                {{ /search:results }}
+            {{ else }}
+                {{ partial:search_empty }}
+            {{ /if }}
+        {{ else }}
+            <div>
+                <p class="flex items-center gap-4 text-base font-medium text-gray-500 after:h-px after:flex-1 after:bg-gray-900/12 after:content-[''] dark:text-gray-400 dark:after:bg-white/12">A few places to start</p>
+                <div class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-xl leading-[1.5] font-semibold tracking-tight">
+                    <a href="/search?q=Macarena" class="relative inline-flex min-h-12 items-center after:invisible after:absolute after:bottom-0 after:left-0 after:h-[0.4rem] after:w-[min(100%,4rem)] after:bg-teal after:content-[''] after:[mask:url(../../public/assets/site/underline.svg)_left_center/contain_no-repeat] hover:after:visible focus-visible:after:visible aria-[current]:after:visible dark:after:bg-teal-light">Macarena</a>
+                    <a href="/search?q=Surge" class="relative inline-flex min-h-12 items-center after:invisible after:absolute after:bottom-0 after:left-0 after:h-[0.4rem] after:w-[min(100%,4rem)] after:bg-teal after:content-[''] after:[mask:url(../../public/assets/site/underline.svg)_left_center/contain_no-repeat] hover:after:visible focus-visible:after:visible aria-[current]:after:visible dark:after:bg-teal-light">Surge</a>
+                    <a href="/search?q=Reebok" class="relative inline-flex min-h-12 items-center after:invisible after:absolute after:bottom-0 after:left-0 after:h-[0.4rem] after:w-[min(100%,4rem)] after:bg-teal after:content-[''] after:[mask:url(../../public/assets/site/underline.svg)_left_center/contain_no-repeat] hover:after:visible focus-visible:after:visible aria-[current]:after:visible dark:after:bg-teal-light">Reebok</a>
+                </div>
+            </div>
+        {{ /if }}
+        <div class="mt-12"><a href="{{ link id='b9e4bfe3-9c12-4553-b7ef-f43c22ffaa63' }}" class="group inline-flex min-h-12 items-center gap-3 font-medium text-teal dark:text-teal-light">{{ partial:arrow direction="back" }} All the writings</a></div>
+    </div>
+</div>

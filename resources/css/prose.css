@@ -1,0 +1,182 @@
+/* Styles for HTML generated from the Markdown field. */
+@layer components {
+    .prose > * + * {
+        margin-top: 1.5rem;
+    }
+    .prose > p:first-child {
+        font-size: 1.3rem;
+        line-height: 1.65;
+        color: var(--color-gray-800);
+    }
+    .prose :is(h1, h2, h3, h4, h5, h6) {
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: -0.035em;
+        text-wrap: pretty;
+        margin-top: 3rem;
+    }
+    .prose h1 {
+        font-size: 2.5rem;
+    }
+    .prose h2 {
+        font-size: clamp(1.65rem, 3vw, 2rem);
+    }
+    .prose h3 {
+        font-size: 1.5rem;
+    }
+    .prose :is(h4, h5, h6) {
+        font-size: 1.125rem;
+    }
+    .prose :is(h1, h2, h3, h4, h5, h6) + * {
+        margin-top: 1rem;
+    }
+    .prose a {
+        color: var(--color-teal);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+    }
+    .prose a:hover {
+        color: var(--color-gray-900);
+    }
+    .prose :is(ul, ol) {
+        padding-left: 1.4em;
+    }
+    .prose ul {
+        list-style: disc;
+    }
+    .prose ol {
+        list-style: decimal;
+    }
+    .prose li {
+        padding-left: 0.25em;
+    }
+    .prose li + li,
+    .prose li > :is(ul, ol) {
+        margin-top: 0.5rem;
+    }
+    .prose li::marker {
+        color: var(--color-teal);
+    }
+    .prose strong {
+        font-weight: 650;
+    }
+    .prose blockquote {
+        position: relative;
+        padding-left: 2.75rem;
+        margin-block: 3rem;
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        line-height: 1.5;
+    }
+    .prose blockquote::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.1em;
+        width: 2rem;
+        height: 2rem;
+        background: var(--color-teal);
+        mask: url('../../public/assets/site/quote.svg') center / contain
+            no-repeat;
+    }
+    .prose blockquote > * + * {
+        margin-top: 1rem;
+    }
+    .prose img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-block: 2.5rem;
+    }
+    .prose :is(figure, hr) {
+        margin-block: 2.5rem;
+    }
+    .prose figcaption {
+        color: var(--color-gray-500);
+        font-size: 1rem;
+    }
+    .prose hr {
+        border-color: color-mix(
+            in srgb,
+            var(--color-gray-900) 15%,
+            transparent
+        );
+    }
+    .prose pre {
+        overflow-x: auto;
+        padding: 1.25rem;
+        background: var(--color-gray-900);
+        color: var(--color-gray-100);
+        font-size: 0.875rem;
+        line-height: 1.8;
+    }
+    .prose code {
+        font-family: var(--font-mono);
+        font-size: 0.85em;
+    }
+    .prose :not(pre) > code {
+        background: var(--color-gray-100);
+        padding: 0.15em 0.3em;
+        border-radius: 0.15rem;
+        overflow-wrap: anywhere;
+    }
+    .prose pre code {
+        font-size: inherit;
+    }
+    .prose table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.6;
+        border-collapse: collapse;
+    }
+    .prose :is(th, td) {
+        padding: 0.8rem 1rem 0.8rem 0;
+        border-bottom: 1px solid
+            color-mix(in srgb, var(--color-gray-900) 12%, transparent);
+        text-align: left;
+    }
+    .prose th {
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    .prose :is(sub, sup) {
+        font-size: 0.75em;
+    }
+
+    @variant dark {
+        .prose > p:first-child {
+            color: var(--color-gray-300);
+        }
+        .prose :is(h1, h2, h3, h4, h5, h6, strong, blockquote, th) {
+            color: var(--color-gray-100);
+        }
+        .prose a,
+        .prose li::marker {
+            color: var(--color-teal-light);
+        }
+        .prose a:hover {
+            color: var(--color-gray-100);
+        }
+        .prose blockquote::before {
+            background: color-mix(in srgb, white 12%, transparent);
+        }
+        .prose figcaption {
+            color: var(--color-gray-400);
+        }
+        .prose :is(hr, th, td) {
+            border-color: color-mix(in srgb, white 12%, transparent);
+        }
+        .prose pre {
+            background: color-mix(in srgb, white 5%, transparent);
+            outline: 1px solid color-mix(in srgb, white 10%, transparent);
+            outline-offset: -1px;
+        }
+        .prose :not(pre) > code {
+            background: color-mix(in srgb, white 8%, transparent);
+            color: var(--color-gray-100);
+        }
+    }
+}

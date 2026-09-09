@@ -1,12 +1,23 @@
-<div class="max-w-5xl mx-auto relative mt-16">
-    {{ svg src="/assets/site/scratches" class="absolute text-gray-800 mt-8 top-0 left-0 w-20 hidden md:block" }}
-    <article class="py-32 max-w-2xl mx-auto">
-        <header class="content">
-            <h1>{{ title }}</h1>
-            {{ content }}
+<div class="relative mx-auto max-w-5xl pt-[clamp(--spacing(11),7vw,--spacing(24))]">
+    {{ partial:margin_mark }}
+    <div class="mx-auto max-w-2xl">
+        <header class="mb-10 sm:mb-14">
+            <h1 class="text-[clamp(2.6rem,5vw,3.75rem)] leading-[1.1] font-[750] tracking-tighter text-pretty wrap-anywhere">{{ title }}</h1>
+            {{ if content }}<div class="mt-6 text-lg leading-[1.75] text-gray-600 dark:text-gray-300">{{ content }}</div>{{ /if }}
         </header>
-        {{ taxonomy:topics sort="title" }}
-            <h2 class="text-4xl font-bold hover:text-teal"><a href="{{ url }}">{{ title | title }}</a></h2>
-        {{ /taxonomy:topics }}
-    </article>
+        <div class="mt-10 space-y-10">
+            {{ taxonomy:topics sort="title" }}
+                {{ if no_results }}<p class="mt-8 text-lg leading-[1.75] text-gray-600 dark:text-gray-300">Still finding a few things to get carried away about. Check back soon.</p>{{ /if }}
+                {{ unless no_results }}
+                    <section>
+                        <div class="flex items-baseline gap-4">
+                            <h2 class="min-w-0 text-[clamp(1.65rem,3vw,2rem)] leading-[1.3] font-bold tracking-[-0.035em] wrap-anywhere"><a href="{{ url }}" class="relative inline-block pb-1 after:invisible after:absolute after:bottom-0 after:left-0 after:h-[0.4rem] after:w-[min(100%,4rem)] after:bg-teal after:content-[''] after:[mask:url(../../public/assets/site/underline.svg)_left_center/contain_no-repeat] hover:text-teal hover:after:visible focus-visible:after:visible aria-[current]:after:visible dark:after:bg-teal-light dark:hover:text-gray-100">{{ title }}</a></h2>
+                            <p class="text-base leading-[1.5] whitespace-nowrap text-teal tabular-nums sm:text-sm dark:text-teal-light">{{ entries_count }} {{ if entries_count == 1 }}article{{ else }}articles{{ /if }}</p>
+                        </div>
+                        {{ if description }}<p class="mt-2 leading-[1.75] text-gray-600 dark:text-gray-300">{{ description }}</p>{{ /if }}
+                    </section>
+                {{ /unless }}
+            {{ /taxonomy:topics }}
+        </div>
+    </div>
 </div>
